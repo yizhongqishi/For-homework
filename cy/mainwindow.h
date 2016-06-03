@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QButtonGroup>
 
 namespace Ui {
 class MainWindow;
@@ -14,7 +15,21 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    QButtonGroup *BG;
+    QButtonGroup *BGL;
+    QButtonGroup *BGC;
 
+private slots:
+    void on_pushButton_clicked();
+    
+    void on_pushButton_2_clicked();
+
+    void theLine(double);
+
+    void theCircle(double);
+
+    void erro();
+    
 private:
     Ui::MainWindow *ui;
 };

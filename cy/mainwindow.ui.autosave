@@ -29,12 +29,12 @@
      <rect>
       <x>440</x>
       <y>80</y>
-      <width>391</width>
+      <width>401</width>
       <height>141</height>
      </rect>
     </property>
     <property name="title">
-     <string>GroupBox</string>
+     <string/>
     </property>
     <widget class="QLineEdit" name="lineEdit_2">
      <property name="geometry">
@@ -95,7 +95,7 @@
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>249</x>
+       <x>250</x>
        <y>60</y>
        <width>20</width>
        <height>20</height>
@@ -122,13 +122,13 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>30</y>
-       <width>120</width>
+       <y>10</y>
+       <width>81</width>
        <height>24</height>
       </rect>
      </property>
      <property name="text">
-      <string>直线</string>
+      <string>圆心-半径</string>
      </property>
     </widget>
    </widget>
@@ -142,7 +142,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>GroupBox</string>
+     <string/>
     </property>
     <widget class="QLineEdit" name="lineEdit_6">
      <property name="geometry">
@@ -286,13 +286,13 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>30</y>
-       <width>120</width>
+       <y>0</y>
+       <width>61</width>
        <height>24</height>
       </rect>
      </property>
      <property name="text">
-      <string>直线</string>
+      <string>三点圆</string>
      </property>
     </widget>
    </widget>
@@ -300,19 +300,19 @@
     <property name="geometry">
      <rect>
       <x>440</x>
-      <y>390</y>
+      <y>410</y>
       <width>401</width>
       <height>191</height>
      </rect>
     </property>
     <property name="title">
-     <string>GroupBox</string>
+     <string/>
     </property>
     <widget class="QLabel" name="label_15">
      <property name="geometry">
       <rect>
        <x>240</x>
-       <y>110</y>
+       <y>150</y>
        <width>69</width>
        <height>19</height>
       </rect>
@@ -325,7 +325,7 @@
      <property name="geometry">
       <rect>
        <x>240</x>
-       <y>30</y>
+       <y>70</y>
        <width>69</width>
        <height>19</height>
       </rect>
@@ -338,7 +338,7 @@
      <property name="geometry">
       <rect>
        <x>280</x>
-       <y>110</y>
+       <y>150</y>
        <width>113</width>
        <height>29</height>
       </rect>
@@ -348,7 +348,7 @@
      <property name="geometry">
       <rect>
        <x>280</x>
-       <y>30</y>
+       <y>70</y>
        <width>113</width>
        <height>29</height>
       </rect>
@@ -358,7 +358,7 @@
      <property name="geometry">
       <rect>
        <x>280</x>
-       <y>70</y>
+       <y>110</y>
        <width>113</width>
        <height>29</height>
       </rect>
@@ -368,7 +368,7 @@
      <property name="geometry">
       <rect>
        <x>240</x>
-       <y>70</y>
+       <y>110</y>
        <width>69</width>
        <height>19</height>
       </rect>
@@ -381,20 +381,20 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>30</y>
-       <width>120</width>
+       <y>0</y>
+       <width>81</width>
        <height>24</height>
       </rect>
      </property>
      <property name="text">
-      <string>直线</string>
+      <string>切线-圆心</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_27">
      <property name="geometry">
       <rect>
        <x>110</x>
-       <y>30</y>
+       <y>70</y>
        <width>113</width>
        <height>29</height>
       </rect>
@@ -404,7 +404,7 @@
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>30</y>
+       <y>70</y>
        <width>69</width>
        <height>19</height>
       </rect>
@@ -417,7 +417,7 @@
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>70</y>
+       <y>110</y>
        <width>69</width>
        <height>19</height>
       </rect>
@@ -430,7 +430,7 @@
      <property name="geometry">
       <rect>
        <x>110</x>
-       <y>110</y>
+       <y>150</y>
        <width>113</width>
        <height>29</height>
       </rect>
@@ -440,7 +440,7 @@
      <property name="geometry">
       <rect>
        <x>110</x>
-       <y>70</y>
+       <y>110</y>
        <width>113</width>
        <height>29</height>
       </rect>
@@ -450,7 +450,7 @@
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>110</y>
+       <y>150</y>
        <width>69</width>
        <height>19</height>
       </rect>
@@ -459,36 +459,75 @@
       <string>X3</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_4">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>450</y>
-      <width>411</width>
-      <height>161</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>GroupBox</string>
-    </property>
-    <widget class="QLabel" name="label_18">
+    <widget class="QLabel" name="label_31">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>30</y>
-       <width>69</width>
+       <x>10</x>
+       <y>70</y>
+       <width>51</width>
        <height>19</height>
       </rect>
      </property>
      <property name="text">
-      <string>X1</string>
+      <string>切线起点</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_32">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>51</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>切线终点</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_33">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>51</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>圆心坐标</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>450</y>
+      <width>431</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>131</x>
+       <y>30</y>
+       <width>31</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>step</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_18">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>161</x>
        <y>30</y>
        <width>111</width>
        <height>29</height>
@@ -498,7 +537,7 @@
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>139</x>
+       <x>160</x>
        <y>70</y>
        <width>111</width>
        <height>27</height>
@@ -511,14 +550,14 @@
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>139</x>
+       <x>160</x>
        <y>110</y>
        <width>111</width>
        <height>27</height>
       </rect>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string>清空</string>
      </property>
     </widget>
    </widget>
@@ -526,8 +565,8 @@
     <property name="geometry">
      <rect>
       <x>900</x>
-      <y>30</y>
-      <width>120</width>
+      <y>0</y>
+      <width>51</width>
       <height>24</height>
      </rect>
     </property>
@@ -540,7 +579,7 @@
      <rect>
       <x>900</x>
       <y>80</y>
-      <width>120</width>
+      <width>61</width>
       <height>24</height>
      </rect>
     </property>
@@ -645,12 +684,12 @@
      <rect>
       <x>900</x>
       <y>210</y>
-      <width>120</width>
+      <width>111</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>两点线</string>
+     <string>斜率-截距-长度</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_14">
@@ -658,12 +697,12 @@
      <rect>
       <x>940</x>
       <y>330</y>
-      <width>69</width>
+      <width>21</width>
       <height>19</height>
      </rect>
     </property>
     <property name="text">
-     <string>X3</string>
+     <string>L</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_13">
@@ -681,12 +720,12 @@
      <rect>
       <x>940</x>
       <y>250</y>
-      <width>69</width>
+      <width>21</width>
       <height>19</height>
      </rect>
     </property>
     <property name="text">
-     <string>X1</string>
+     <string>K</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_13">
@@ -694,12 +733,12 @@
      <rect>
       <x>940</x>
       <y>290</y>
-      <width>69</width>
+      <width>16</width>
       <height>19</height>
      </rect>
     </property>
     <property name="text">
-     <string>X2</string>
+     <string>B</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_14">
@@ -727,12 +766,12 @@
      <rect>
       <x>900</x>
       <y>380</y>
-      <width>120</width>
+      <width>81</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>两点线</string>
+     <string>斜率-终点</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -809,7 +848,7 @@
      <rect>
       <x>920</x>
       <y>420</y>
-      <width>69</width>
+      <width>41</width>
       <height>19</height>
      </rect>
     </property>
@@ -820,14 +859,14 @@
    <widget class="QLabel" name="label_26">
     <property name="geometry">
      <rect>
-      <x>940</x>
+      <x>938</x>
       <y>460</y>
-      <width>69</width>
-      <height>19</height>
+      <width>21</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>X1</string>
+     <string>X</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_27">
@@ -840,7 +879,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Y1</string>
+     <string>Y</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_25">
@@ -868,12 +907,12 @@
      <rect>
       <x>440</x>
       <y>0</y>
-      <width>120</width>
+      <width>51</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>直线</string>
+     <string>圆弧</string>
     </property>
    </widget>
   </widget>
@@ -883,7 +922,7 @@
      <x>0</x>
      <y>0</y>
      <width>1297</width>
-     <height>27</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>
