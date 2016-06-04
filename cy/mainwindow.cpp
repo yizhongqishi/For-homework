@@ -97,6 +97,8 @@ void MainWindow::theLine(double step){
             listy << Yrs;
             count++;
         }
+        //画图
+
     }else{
         erro();
     }
@@ -104,6 +106,59 @@ void MainWindow::theLine(double step){
 
 void MainWindow::theCircle(double step){
     QRadioButton *ci = qobject_cast<QRadioButton*>(BGC->checkedButton());
+    if (ci != 0){
+        QString name = li->objectName();
+        double R,Alpha,Cx,Cy,pi;
+        Alpha = 0;
+        pi = 3.1416;
+        double theta = ui->lineEdit_3->text().toDouble();
+        double deltaTheta = ui->lineEdit_23->text().toDouble();
+        if (QString::compare(name,"radioButton_6")){
+            Cx = ui->lineEdit->text().toDouble();
+            Cy = ui->lineEdit_5->text().toDouble();
+            R = ui->lineEdit_2->text().toDouble();
+        }else if (QString::compare(name,"radioButton_7")){
+            double x1 = ui->lineEdit_7->text().toDouble();
+            double x2 = ui->lineEdit_6->text().toDouble();
+            double x3 = ui->lineEdit_8->text().toDouble();
+            double y1 = ui->lineEdit_10->text().toDouble();
+            double y2 = ui->lineEdit_11->text().toDouble();
+            double y3 = ui->lineEdit_9->text().toDouble();
+            double a = 2 * (x2 - x1);
+            double b = 2 * (y2 - y1);
+            double c = x2 * x2 + y2 * y2 - x1 * x1 - y1 * y1;
+            double d = 2 * (x3 - x2);
+            double e = 2 * (y3 - y2);
+            double f = x3 * x3 + y3 * y3 - x2 * x2 - y2 * y2;
+            Cx = (b * f - e * c) / (b * d - e * a);
+            Cy = (d * c - a * f) / (b * d - e * a);
+            R = (Cx - x1) * (Cx - x1) + (Cy - y1) * (Cy - y1);
+            R = sqrt(R);
+        }else {
+            double x1 = ui->lineEdit_27->text().toDouble();
+            double x2 = ui->lineEdit_29->text().toDouble();
+            Cx = ui->lineEdit_28->text().toDouble();
+            double y1 = ui->lineEdit_16->text().toDouble();
+            double y2 = ui->lineEdit_17->text().toDouble();
+            Cy = ui->lineEdit_15->text().toDouble();
+            double K = (x1 - x2) / (y1 - y2);
+            double B = y1 - K * x1;
+            double D = qAbs(K * Cx - Cy + B);
+            R = D / (sqrt(K * K + 1));
+        }
+        while (theta >= 360) theta -= 360;
+        theta = pi * theta / (double)180;
+        if (deltaTheta < 0){
+            double D = qAbs(deltaTheta);
+            while (D >= 360) D -= 360;
+            deltaTheta = (double)(0 - pi) * D / (double)180;
+        }else{
+            while (deltaTheta >= 360) deltaTheta -= 360;
+            deltaTheta = pi * deltaTheta / (double)180;
+        }
+    }else {
+        erro();
+    }
 }
 
 void MainWindow::erro(){
