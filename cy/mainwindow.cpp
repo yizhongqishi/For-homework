@@ -54,6 +54,7 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::theLine(double step){
     QRadioButton *li = qobject_cast<QRadioButton*>(BGL->checkedButton());
     double Xs,Xe,Ys,Ye;
+    Qlist<double> listx,listy;
     if (li != 0){
         QString name = li->objectName();
         if (QString::compare(name,"radioButton_2")){
@@ -86,8 +87,14 @@ void MainWindow::theLine(double step){
         while (count < Tstep){
             Fs = (qAbs(Xre)  * qAbs(Yrs) - qAbs(Xrs) * qAbs(Yre));
             if (Fs >= 0){
-                if (Xre)
+                if (Xre >= 0) Xrs += step;
+                else Xrs -= step;
+            }else {
+                if (Yre >= 0) Yrs += step;
+                else Yrs -= step;
             }
+            listx << Xrs;
+            listy << Yrs;
             count++;
         }
     }else{
