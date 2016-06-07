@@ -54,7 +54,7 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::theLine(double step){
     QRadioButton *li = qobject_cast<QRadioButton*>(BGL->checkedButton());
     double Xs,Xe,Ys,Ye;
-    Qlist<double> listx,listy;
+    QList<double> listx,listy;
     if (li != 0){
         QString name = li->objectName();
         if (QString::compare(name,"radioButton_2")){
@@ -107,7 +107,7 @@ void MainWindow::theLine(double step){
 void MainWindow::theCircle(double step){
     QRadioButton *ci = qobject_cast<QRadioButton*>(BGC->checkedButton());
     if (ci != 0){
-        QString name = li->objectName();
+        QString name = ci->objectName();
         double R,Alpha,Cx,Cy,pi;
         Alpha = 0;
         pi = 3.1416;
@@ -156,6 +156,24 @@ void MainWindow::theCircle(double step){
             while (deltaTheta >= 360) deltaTheta -= 360;
             deltaTheta = pi * deltaTheta / (double)180;
         }
+        double X1,Y1,X2,Y2,yCurval,xCurval;
+        X1 = R * cos(theta);
+        Y1 = R * sin(theta);
+        X2 = R * cos(theta + deltaTheta);
+        Y2 = R * sin(theta + deltaTheta);
+        xCurval = X1;
+        yCurval = Y1;
+        while (qAbs(Alpha) < qAbs(deltaTheta)){
+            double a = atan(yCurval / xCurval);
+            double devVal = xCurval * xCurval + yCurval * yCurval - R * R;
+            if (deltaTheta >= 0){
+                double nDir = -1;
+                if (xCurval >=0 && yCurval >= 0) nDir = 1;
+                else if (xCurval <= 0 && yCurval >= 0) nDir =2;
+                else if (xCurval <= 0 && yCurval <= 0) nDir =3;
+                else nDir = 4;
+             }
+           }
     }else {
         erro();
     }
