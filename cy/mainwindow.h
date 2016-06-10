@@ -28,7 +28,7 @@ private slots:
 
     void theCircle(double);
 
-    void erro();
+    void erro(QString);
 
     void print(QList<double>,QList<double>,double,double,int);
     

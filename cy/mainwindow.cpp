@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
     BGL->addButton(ui->radioButton_2);
     BGL->addButton(ui->radioButton_3);
     BGL->addButton(ui->radioButton_4);
-    
+
 }
 
 MainWindow::~MainWindow()
@@ -34,15 +34,16 @@ void MainWindow::on_pushButton_clicked()
 {
     QRadioButton *pbtn = qobject_cast<QRadioButton*>(BG->checkedButton());
     if (pbtn != 0){
+        if (ui->lineEdit_18->text().isEmpty()) erro("请输入迭代部数");
         double step = ui->lineEdit_18->text().toDouble();
         QString name = pbtn->objectName();
-        if (QString::compare(name,"radioButton")){
+        if (QString::compare(name, "radioButton") == 0){
             theLine(step);
         }else{
             theCircle(step);
         }
     }else{
-        erro();
+        erro("请选择绘制的是直线还是圆");
     }
 }
 
@@ -100,7 +101,7 @@ void MainWindow::theLine(double step){
         print(listx,listy,Xs,Ys,1);//画图
 
     }else{
-        erro();
+        erro("请选择一种画直线的方式");
     }
 }
 
@@ -195,20 +196,19 @@ void MainWindow::theCircle(double step){
            }
             print(listx,listy,Cx,Cy,2);//画图
     }else {
-        erro();
+        erro("请选择一种画圆的方式");
     }
 }
 
-void MainWindow::erro(){
-    QMessageBox::information(this,"错误","请正确选择");
+void MainWindow::erro(QString errmsg){
+    QMessageBox::information(this, "错误", errmsg);
 }
 
 void MainWindow::print(QList<double> listx ,QList<double> listy,double x,double y,int flag){
-
     if (flag == 1){
-
+        ui->widget->setPoints(listx,listy, x,y);
     }else {
-
+        ui->widget->setPoints(listx,listy, x,y);
     }
-
+    ui->widget->show();
 }
