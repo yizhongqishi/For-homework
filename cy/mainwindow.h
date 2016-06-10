@@ -29,6 +29,8 @@ private slots:
     void theCircle(double);
 
     void erro();
+
+    void print();
     
 private:
     Ui::MainWindow *ui;
