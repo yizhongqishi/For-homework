@@ -97,7 +97,7 @@ void MainWindow::theLine(double step){
             listy << Yrs;
             count++;
         }
-        //画图
+        print();//画图
 
     }else{
         erro();
@@ -106,6 +106,7 @@ void MainWindow::theLine(double step){
 
 void MainWindow::theCircle(double step){
     QRadioButton *ci = qobject_cast<QRadioButton*>(BGC->checkedButton());
+    QList<double> listx,listy;
     if (ci != 0){
         QString name = ci->objectName();
         double R,Alpha,Cx,Cy,pi;
@@ -172,8 +173,27 @@ void MainWindow::theCircle(double step){
                 else if (xCurval <= 0 && yCurval >= 0) nDir =2;
                 else if (xCurval <= 0 && yCurval <= 0) nDir =3;
                 else nDir = 4;
+                if (nDir == 1){
+                    if (devVal >= 0) xCurval -= step;
+                    else yCurval += step;
+                }else if (nDir == 2){
+                    if (devVal >= 0) yCurval -= step;
+                    else xCurval -= step;
+                }else if (nDir == 3){
+                    if (devVal >= 0) xCurval += step;
+                    else yCurval -= step;
+                }else {
+                    if (devVal >= 0) yCurval += step;
+                    else xCurval += step;
+                }
+                listx << xCurval;
+                listy << yCurval;
              }
+            double b = atan(qAbs(yCurval) / qAbs(xCurval));
+           double alphaStep = qAbs(b) - qAbs(a);
+           Alpha += qAbs(alphaStep);
            }
+            print();//画图
     }else {
         erro();
     }
@@ -181,4 +201,8 @@ void MainWindow::theCircle(double step){
 
 void MainWindow::erro(){
     QMessageBox::information(this,"错误","请正确选择");
+}
+
+void MainWindow::print(){
+
 }
