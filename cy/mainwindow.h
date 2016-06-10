@@ -30,7 +30,7 @@ private slots:
 
     void erro();
 
-    void print();
+    void print(QList<double>,QList<double>,double,double,int);
     
 private:
     Ui::MainWindow *ui;

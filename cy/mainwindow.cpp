@@ -97,7 +97,7 @@ void MainWindow::theLine(double step){
             listy << Yrs;
             count++;
         }
-        print();//画图
+        print(listx,listy,Xs,Ys,1);//画图
 
     }else{
         erro();
@@ -193,7 +193,7 @@ void MainWindow::theCircle(double step){
            double alphaStep = qAbs(b) - qAbs(a);
            Alpha += qAbs(alphaStep);
            }
-            print();//画图
+            print(listx,listy,Cx,Cy,2);//画图
     }else {
         erro();
     }
@@ -203,6 +203,12 @@ void MainWindow::erro(){
     QMessageBox::information(this,"错误","请正确选择");
 }
 
-void MainWindow::print(){
+void MainWindow::print(QList<double> listx ,QList<double> listy,double x,double y,int flag){
+
+    if (flag == 1){
+
+    }else {
+
+    }
 
 }
