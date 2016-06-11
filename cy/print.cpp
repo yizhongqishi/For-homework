@@ -3,10 +3,11 @@
 
 Print::Print(QWidget *parent) : QWidget(parent)
 {
-
+//    fortest();
 }
 
 void Print::setPoints(QList<double> vec, QList<double> vec2, double Cx, double Cy) {
+    points.clear();
     for (int i = 0; i< vec.length(); ++i) {
         QPoint p(vec[i], vec2[i]);
         points.append(p);

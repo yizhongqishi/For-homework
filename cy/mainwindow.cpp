@@ -58,12 +58,12 @@ void MainWindow::theLine(double step){
     QList<double> listx,listy;
     if (li != 0){
         QString name = li->objectName();
-        if (QString::compare(name,"radioButton_2")){
+        if (QString::compare(name,"radioButton_2") == 0){
            Xs = ui->lineEdit_21->text().toDouble();
            Xe = ui->lineEdit_22->text().toDouble();
            Ys = ui->lineEdit_19->text().toDouble();
            Ye = ui->lineEdit_20->text().toDouble();
-        }else if (QString::compare(name,"radioButton_3")){
+        }else if (QString::compare(name,"radioButton_3") == 0){
             double K = ui->lineEdit_13->text().toDouble();
             double B = ui->lineEdit_12->text().toDouble();
             double L = ui->lineEdit_14->text().toDouble();
@@ -115,11 +115,11 @@ void MainWindow::theCircle(double step){
         pi = 3.1416;
         double theta = ui->lineEdit_3->text().toDouble();
         double deltaTheta = ui->lineEdit_23->text().toDouble();
-        if (QString::compare(name,"radioButton_6")){
+        if (QString::compare(name,"radioButton_6") == 0){
             Cx = ui->lineEdit->text().toDouble();
             Cy = ui->lineEdit_5->text().toDouble();
             R = ui->lineEdit_2->text().toDouble();
-        }else if (QString::compare(name,"radioButton_7")){
+        }else if (QString::compare(name,"radioButton_7") == 0){
             double x1 = ui->lineEdit_7->text().toDouble();
             double x2 = ui->lineEdit_6->text().toDouble();
             double x3 = ui->lineEdit_8->text().toDouble();
@@ -210,5 +210,6 @@ void MainWindow::print(QList<double> listx ,QList<double> listy,double x,double 
     }else {
         ui->widget->setPoints(listx,listy, x,y);
     }
-    ui->widget->show();
+    ui->widget->update();
+
 }
