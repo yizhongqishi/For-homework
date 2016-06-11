@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
     BGL->addButton(ui->radioButton_2);
     BGL->addButton(ui->radioButton_3);
     BGL->addButton(ui->radioButton_4);
-    
+
 }
 
 MainWindow::~MainWindow()
@@ -34,15 +34,16 @@ void MainWindow::on_pushButton_clicked()
 {
     QRadioButton *pbtn = qobject_cast<QRadioButton*>(BG->checkedButton());
     if (pbtn != 0){
+        if (ui->lineEdit_18->text().isEmpty()) erro("请输入迭代部数");
         double step = ui->lineEdit_18->text().toDouble();
         QString name = pbtn->objectName();
-        if (QString::compare(name,"radioButton")){
+        if (QString::compare(name, "radioButton") == 0){
             theLine(step);
         }else{
             theCircle(step);
         }
     }else{
-        erro();
+        erro("请选择绘制的是直线还是圆");
     }
 }
 
@@ -57,12 +58,12 @@ void MainWindow::theLine(double step){
     QList<double> listx,listy;
     if (li != 0){
         QString name = li->objectName();
-        if (QString::compare(name,"radioButton_2")){
+        if (QString::compare(name,"radioButton_2") == 0){
            Xs = ui->lineEdit_21->text().toDouble();
            Xe = ui->lineEdit_22->text().toDouble();
            Ys = ui->lineEdit_19->text().toDouble();
            Ye = ui->lineEdit_20->text().toDouble();
-        }else if (QString::compare(name,"radioButton_3")){
+        }else if (QString::compare(name,"radioButton_3") == 0){
             double K = ui->lineEdit_13->text().toDouble();
             double B = ui->lineEdit_12->text().toDouble();
             double L = ui->lineEdit_14->text().toDouble();
@@ -97,10 +98,10 @@ void MainWindow::theLine(double step){
             listy << Yrs;
             count++;
         }
-        print();//画图
+        print(listx,listy,Xs,Ys,1);//画图
 
     }else{
-        erro();
+        erro("请选择一种画直线的方式");
     }
 }
 
@@ -114,11 +115,11 @@ void MainWindow::theCircle(double step){
         pi = 3.1416;
         double theta = ui->lineEdit_3->text().toDouble();
         double deltaTheta = ui->lineEdit_23->text().toDouble();
-        if (QString::compare(name,"radioButton_6")){
+        if (QString::compare(name,"radioButton_6") == 0){
             Cx = ui->lineEdit->text().toDouble();
             Cy = ui->lineEdit_5->text().toDouble();
             R = ui->lineEdit_2->text().toDouble();
-        }else if (QString::compare(name,"radioButton_7")){
+        }else if (QString::compare(name,"radioButton_7") == 0){
             double x1 = ui->lineEdit_7->text().toDouble();
             double x2 = ui->lineEdit_6->text().toDouble();
             double x3 = ui->lineEdit_8->text().toDouble();
@@ -193,16 +194,22 @@ void MainWindow::theCircle(double step){
            double alphaStep = qAbs(b) - qAbs(a);
            Alpha += qAbs(alphaStep);
            }
-            print();//画图
+            print(listx,listy,Cx,Cy,2);//画图
     }else {
-        erro();
+        erro("请选择一种画圆的方式");
     }
 }
 
-void MainWindow::erro(){
-    QMessageBox::information(this,"错误","请正确选择");
+void MainWindow::erro(QString errmsg){
+    QMessageBox::information(this, "错误", errmsg);
 }
 
-void MainWindow::print(){
+void MainWindow::print(QList<double> listx ,QList<double> listy,double x,double y,int flag){
+    if (flag == 1){
+        ui->widget->setPoints(listx,listy, x,y);
+    }else {
+        ui->widget->setPoints(listx,listy, x,y);
+    }
+    ui->widget->update();
 
 }
