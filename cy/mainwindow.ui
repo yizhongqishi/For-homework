@@ -138,6 +138,7 @@
      </property>
      <property name="checkable">
       <bool>true</bool>
+<<<<<<< HEAD
      </property>
     </widget>
     <widget class="QRadioButton" name="radioButton_9">
@@ -151,6 +152,8 @@
      </property>
      <property name="text">
       <string>RadioButton</string>
+=======
+>>>>>>> 857f2f72917268d230bfd46bf26ccf684e99cd74
      </property>
     </widget>
    </widget>
@@ -1041,7 +1044,11 @@
      <x>0</x>
      <y>0</y>
      <width>1283</width>
+<<<<<<< HEAD
      <height>22</height>
+=======
+     <height>27</height>
+>>>>>>> 857f2f72917268d230bfd46bf26ccf684e99cd74
     </rect>
    </property>
   </widget>
