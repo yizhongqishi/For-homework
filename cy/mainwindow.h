@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
@@ -16,8 +16,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     QButtonGroup *BG;
-    QButtonGroup *BGL;
-    QButtonGroup *BGC;
+    QButtonGroup *BGG;
 
 private slots:
     void on_pushButton_clicked();
@@ -30,8 +29,11 @@ private slots:
 
     void erro(QString);
 
+    void errotext();
+
     void print(QList<double>,QList<double>,double,double,int);
     
+
 private:
     Ui::MainWindow *ui;
 };
