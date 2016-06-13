@@ -36,9 +36,10 @@ void Print::setPoints1(QList<double> x, QList<double> y, double Xs,double Ys){
 
 void Print::paintEvent(QPaintEvent *events){
     QPainter paint(this);
-    //    paint.translate(100.,100.);
-//    paint.scale(2,2);
-    paint.setWindow(QRect(-100,100,200,-200));
+    paint.translate(width() / 2, height() / 2);
+    paint.scale(1,-1);
+    paint.drawLine(-2000,0,2000,0);
+    paint.drawLine(0,1500,0,-1500);
     paint.drawPolyline(points);
 }
 
