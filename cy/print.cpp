@@ -1,18 +1,36 @@
-#include "print.h"
+﻿#include "print.h"
 #include <QPainter>
 
 Print::Print(QWidget *parent) : QWidget(parent)
 {
-
+//    fortest();
 }
 
-void Print::setPoints(QList<double> vec, QList<double> vec2, double Cx, double Cy) {
-    for (int i = 0; i< vec.length(); ++i) {
-        QPoint p(vec[i], vec2[i]);
-        points.append(p);
+void Print::setPoints(QList<double> x, QList<double> y, double Cx, double Cy) {
+    points.clear();
+    //QPoint p(Cx, Cy);
+    //points.append(p);
+    for (int i = 0; i< x.length(); ++i) {
+        x[i] += Cx;
+        y[i] += Cy;
+        if (i > 1){
+            QPoint p(x[i], y[i]);
+            points.append(p);
+        }
+    } 
+}
+
+void Print::setPoints1(QList<double> x, QList<double> y, double Xs,double Ys){
+    points.clear();
+    QPoint p(Xs, Ys);
+    for (int i = 0; i < x.length(); i++){
+        x[i] += Xs;
+        y[i] += Ys;
+        if (i > 0){
+            QPoint p(x[i],y[i]);
+            points.append(p);
+        }
     }
-    this->Cx = Cx;
-    this->Cy = Cy;
 }
 
 
