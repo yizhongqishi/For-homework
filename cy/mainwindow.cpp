@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     BGG = new QButtonGroup(this);
     BG->addButton(ui->radioButton);
     BG->addButton(ui->radioButton_5);
+    BG->addButton(ui->radioButton_10);
     /*BGC->addButton(ui->radioButton_6);
     BGC->addButton(ui->radioButton_7);
     BGC->addButton(ui->radioButton_8);
@@ -25,7 +26,9 @@ MainWindow::MainWindow(QWidget *parent) :
     BGG->addButton(ui->radioButton_2);
     BGG->addButton(ui->radioButton_3);
     BGG->addButton(ui->radioButton_4);
-
+    BGG->addButton(ui->radioButton_9);
+    ui->radioButton_9->hide();
+    ui->radioButton_10->hide();
 
 }
 
@@ -59,9 +62,35 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_2_clicked()
 {
 
-    ui->radioButton_2->clearFocus();
-    ui->radioButton_6->setChecked(false);
+    ui->radioButton_10->setChecked(true);
+    ui->radioButton_9->setChecked(true);
+    ui->lineEdit->clear();
+    ui->lineEdit_2->clear();
+    ui->lineEdit_3->clear();
+    ui->lineEdit_5->clear();
+    ui->lineEdit_6->clear();
+    ui->lineEdit_7->clear();
+    ui->lineEdit_8->clear();
+    ui->lineEdit_9->clear();
+    ui->lineEdit_10->clear();
+    ui->lineEdit_11->clear();
+    ui->lineEdit_12->clear();
+    ui->lineEdit_13->clear();
+    ui->lineEdit_14->clear();
+    ui->lineEdit_15->clear();
+    ui->lineEdit_16->clear();
+    ui->lineEdit_17->clear();
     ui->lineEdit_18->clear();
+    ui->lineEdit_20->clear();
+    ui->lineEdit_21->clear();
+    ui->lineEdit_22->clear();
+    ui->lineEdit_23->clear();
+    ui->lineEdit_24->clear();
+    ui->lineEdit_25->clear();
+    ui->lineEdit_26->clear();
+    ui->lineEdit_27->clear();
+    ui->lineEdit_28->clear();
+    ui->lineEdit_29->clear();
 }
 
 void MainWindow::theLine(double step){
