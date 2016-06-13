@@ -19,6 +19,8 @@ void Print::setPoints(QList<double> vec, QList<double> vec2, double Cx, double C
 
 void Print::paintEvent(QPaintEvent *events){
     QPainter paint(this);
+    //    paint.translate(100.,100.);
+    paint.scale(2,2);
     paint.drawPolyline(points);
 }
 
