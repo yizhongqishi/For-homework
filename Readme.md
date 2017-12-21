@@ -1,3 +1,3 @@
-Fuck me
+One homework
 ===========
-A project for my girl friend.
+A project for my girlfriend.
